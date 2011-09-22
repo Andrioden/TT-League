@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="style.css">
+		<style type="text/css" title="currentStyle">
+			@import "http://datatables.net/release-datatables/media/css/demo_page.css";
+			@import "http://datatables.net/release-datatables/media/css/demo_table.css";
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script src="http://datatables.net/release-datatables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="./data.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			// OBS: matches variable stores in matches.js
+			$(document).ready(function() {
+				$('#ladder').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="laddertable"></table>' );
+				$('#laddertable').dataTable( {
+					"bPaginate": false,
+					"aaData": generate_stats(matches),
+					"aoColumns": [
+						{ "sTitle": "Name" },
+						{ "sTitle": "Played" },
+						{ "sTitle": "Streak" },
+						{ "sTitle": "Win" },
+						{ "sTitle": "Loss", "sClass": "center" },
+						{ "sTitle": "SetsWon", "sClass": "center" },
+						{ "sTitle": "SetsLost", "sClass": "center" },
+						{ "sTitle": "SetsDiff", "sClass": "center" },
+						{ "sTitle": "Points", "sClass": "center" },
+					]
+				});
+			});
+			
+			function generate_stats(matches) {
+				var list = players;
+				for (var i=0; i<matches.length; i++) {
+					var m = matches[i];
+					// Check if players allready are in list
+					if (player_exist(list, m[0])==false) {
+						list.push([m[0],0,0,0,0,0,0,0,0]);
+					}
+					if (player_exist(list, m[3])==false) {
+						list.push([m[3],0,0,0,0,0,0,0,0]);
+					}
+					// Fetch players from list
+					var aplayer = list[get_id(list,m[0])];
+					var bplayer = list[get_id(list,m[3])];
+					update_player(aplayer, m[1], m[2]);
+					update_player(bplayer, m[2], m[1]);
+				}
+				return list;
+			}
+			
+			// Check if player exists in given list, returns the index if so.
+			function player_exist(list, player) {
+				for (var i=0; i<list.length; i++) {
+					if (player==list[i][0]) {
+						return true;
+					}
+				}
+				return false;
+			}
+			
+			function get_id(list, player) {
+				for (var i=0; i<list.length; i++) {
+					if (player==list[i][0]) {
+						return i;
+					}
+				}
+				alert("player not found in list, should not happen");
+			}
+			
+			// Update the player list item
+			function update_player(player, won, lost) {
+				if (won > lost) {
+					player[2]++;
+					player[3]++;
+					player[8] += 3;
+				}
+				else if (won < lost){
+					player[2] = 0;
+					player[4]++;
+				}
+				else {
+					alert('DRAW DETECTED, ERROR!');
+				}
+				player[1]++;
+				player[5] += won;
+				player[6] += lost;
+				player[7] = player[5] - player[6];
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="menu">
+			<span class="item"><a href="./index.html">News</a></span>
+			<span class="item"><a href="./ladder.html">Ladder</a></span>
+			<span class="item"><a href="./matches.html">Matches</a></span>
+			<span class="item"><a href="./info.html">Info</a></span>
+		</div>
+		<div id="content">
+			<h1>Ladder</h1>
+			<div id="ladder"></div>
+		</div>
+		<div id="footer">© 2011 André S. Hansen</div>
+	</body>
+</html>
