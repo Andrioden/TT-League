@@ -14,7 +14,7 @@
 			// OBS: matches variable stores in matches.js
 			$(document).ready(function() {
 				$('#ladder').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="laddertable"></table>' );
-				$('#laddertable').dataTable( {
+				var table = $('#laddertable').dataTable( {
 					"bPaginate": false,
 					"aaData": generate_stats(matches),
 					"aoColumns": [
@@ -29,6 +29,7 @@
 						{ "sTitle": "Points", "sClass": "center" },
 					]
 				});
+				table.fnSort( [ [8,'desc'], [7,'desc'] ] );
 			});
 			
 			function generate_stats(matches) {
@@ -89,7 +90,6 @@
 				player[6] += lost;
 				player[7] = player[5] - player[6];
 			}
-			
 		</script>
 	</head>
 	<body>
