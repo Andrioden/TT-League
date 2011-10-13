@@ -16,7 +16,15 @@
 				// Make match date pretty
 				for (var i=0; i<matches.length; i++) {
 					var date = matches[i][4];
-					var newformat = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+					var month = (date.getMonth()+1);
+					if (month<10) {
+						month = "0"+month;
+					}
+					var day = date.getDate();
+					if (day<10) {
+						day = "0"+day;
+					}
+					var newformat = date.getFullYear()+"-"+month+"-"+day;
 					matches[i][4] = newformat;
 				}
 				$('#matches').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="matchtable"></table>' );
