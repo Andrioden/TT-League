@@ -18,7 +18,8 @@ var matches =[/* Player A | A sets | B sets | Player B | Date played*/
               ['Krakels', 2, 1, 'Jostein', new Date(2011,9,20)],
               ['Krakels', 0, 2, 'Dagz', new Date(2011,9,20)],
               ['Sorebo', 2, 0, 'Nelich', new Date(2011,9,20)],
-              ['Sorebo', 2, 1, 'Dagz', new Date(2011,9,21)]
+              ['Sorebo', 2, 1, 'Dagz', new Date(2011,9,21)],
+              ['Dagz', 0, 2, 'Steinar', new Date(2011,9,24)]
               ];
 
 var players = [
