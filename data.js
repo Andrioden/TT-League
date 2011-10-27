@@ -3,7 +3,6 @@ var matches =[/* Player A | A sets | B sets | Player B | Date played*/
               ['Sorebo', 2, 0, 'Nelich', new Date(2011,9,6)],
               ['Jostein', 1, 2, 'Steinar', new Date(2011,9,6)],
               ['Andriod', 1, 2, 'Christian', new Date(2011,9,6)],
-              
               ['Jostein', 0, 2, 'Christian', new Date(2011,9,13)],
               ['Steinar', 1, 2, 'Sorebo', new Date(2011,9,13)],
               ['Andriod', 2, 1, 'Nelich', new Date(2011,9,13)],
@@ -19,7 +18,16 @@ var matches =[/* Player A | A sets | B sets | Player B | Date played*/
               ['Krakels', 0, 2, 'Dagz', new Date(2011,9,20)],
               ['Sorebo', 2, 0, 'Nelich', new Date(2011,9,20)],
               ['Sorebo', 2, 1, 'Dagz', new Date(2011,9,21)],
-              ['Dagz', 0, 2, 'Steinar', new Date(2011,9,24)]
+              ['Dagz', 0, 2, 'Steinar', new Date(2011,9,24)],
+              ['Krakels', 0, 2, 'Sorebo', new Date(2011,9,27)],
+              ['Andriod', 2, 0, 'Håkon', new Date(2011,9,27)],
+              ['Emil', 2, 0, 'Jostein', new Date(2011,9,27)],
+              ['Dagz', 0, 2, 'Christian', new Date(2011,9,27)],
+              ['Steinar', 2, 0, 'Nelich', new Date(2011,9,27)],
+              ['Christian', 2, 0, 'Steinar', new Date(2011,9,27)],
+              ['Emil', 0, 2, 'Sorebo', new Date(2011,9,27)],
+              ['Jostein', 2, 1, 'Håkon', new Date(2011,9,27)],
+              ['Dagz', 2, 0, 'Krakels', new Date(2011,9,27)]
               ];
 
 var players = [
