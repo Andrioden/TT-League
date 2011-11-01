@@ -39,7 +39,7 @@ var unplayed_matches = [/* Round Number | Player A | Player B*/
                         [2, "Selmer", "TheForgottenOne"],
                         [3, "Håkon", "TheForgottenOne"],
                         [3, "Steinar", "Mikael"],
-                        [3, "Ole", "Selmer"],
+                        [3, "Nelich", "Selmer"],
                         [3, "Håkon", "TheForgottenOne"],
                         [3, "Mikael", "Selmer"],
                         [4, "Selmer", "TheForgottenOne"],
