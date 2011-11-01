@@ -24,3 +24,5 @@
 #footer {
 	text-align: center;
 }
+
+.nobullet { list-style-type: none; }

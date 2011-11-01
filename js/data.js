@@ -28,20 +28,37 @@ var matches =[/* Player A | A sets | B sets | Player B | Date played*/
               ['Emil', 0, 2, 'Sorebo', new Date(2011,9,27)],
               ['Jostein', 2, 1, 'Håkon', new Date(2011,9,27)],
               ['Dagz', 2, 0, 'Krakels', new Date(2011,9,27)]
-              ];
+             ];
+
+var unplayed_matches = [/* Round Number | Player A | Player B*/
+                        [1, "Mikael", "TheForgottenOne"],
+                        [1, "Krakels", "Mikael"],
+                        [2, "Dagz", "Selmer"],
+                        [2, "Mikael", "Dagz"],
+                        [2, "Selmer", "TheForgottenOne"],
+                        [3, "Håkon", "TheForgottenOne"],
+                        [3, "Steinar", "Mikael"],
+                        [3, "Ole", "Selmer"],
+                        [3, "Håkon", "TheForgottenOne"],
+                        [3, "Mikael", "Selmer"],
+                        [4, "Nelich", "Andriod"],
+                        [4, "Selmer", "TheForgottenOne"],
+                        [4, "Selmer", "Mikael"],
+                        [4, "TheForgottenOne", "Mikael"],
+                       ]
 
 var players = [
-               ["Andriod",0,0,0,0,0,0,0,0],
-               ["Nelich",0,0,0,0,0,0,0,0],
-               ["Selmer",0,0,0,0,0,0,0,0],
-               ["TheForgottenOne",0,0,0,0,0,0,0,0],
-               ["Steinar",0,0,0,0,0,0,0,0],
-               ["Jostein",0,0,0,0,0,0,0,0],
-               ["Krakels",0,0,0,0,0,0,0,0],
-               ["Dagz",0,0,0,0,0,0,0,0],
-               ["Sorebo",0,0,0,0,0,0,0,0],
-               ["Christian",0,0,0,0,0,0,0,0],
-               ["Emil",0,0,0,0,0,0,0,0],
-               ["Mikael",0,0,0,0,0,0,0,0],
-               ["Håkon",0,0,0,0,0,0,0,0]
+               [0, "Andriod",0,0,0,0,0,0,0,0],
+               [0, "Nelich",0,0,0,0,0,0,0,0],
+               [0, "Selmer",0,0,0,0,0,0,0,0],
+               [0, "TheForgottenOne",0,0,0,0,0,0,0,0],
+               [0, "Steinar",0,0,0,0,0,0,0,0],
+               [0, "Jostein",0,0,0,0,0,0,0,0],
+               [0, "Krakels",0,0,0,0,0,0,0,0],
+               [0, "Dagz",0,0,0,0,0,0,0,0],
+               [0, "Sorebo",0,0,0,0,0,0,0,0],
+               [0, "Christian",0,0,0,0,0,0,0,0],
+               [0, "Emil",0,0,0,0,0,0,0,0],
+               [0, "Mikael",0,0,0,0,0,0,0,0],
+               [0, "Håkon",0,0,0,0,0,0,0,0]
                ];
