@@ -2,7 +2,7 @@ $(document).ready(function() {
 	// Generate select boxes for round generator
 	var ul = $("#player_list");
 	for (var i=0; i<players.length; i++) {
-		var name = players[i][0];
+		var name = players[i][1];
 		ul.append("<li><input type='checkbox' name='"+name+"'>"+name+"</li>");
 	}
 });
