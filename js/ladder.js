@@ -75,12 +75,22 @@ function get_id(list, player) {
 // Update the player list item
 function update_player(player, won, lost) {
 	if (won > lost) {
-		player[3]++;
+		if (player[3]<0) {
+			player[3] = 1;
+		}
+		else {
+			player[3]++;
+		}
 		player[4]++;
 		player[9] += 3;
 	}
 	else if (won < lost){
-		player[3] = 0;
+		if (player[3]>0) {
+			player[3] = -1;
+		}
+		else {
+			player[3]--;
+		}
 		player[5]++;
 	}
 	else {

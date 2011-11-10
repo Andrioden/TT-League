@@ -39,6 +39,21 @@ var matches =[/* Player A | A sets | B sets | Player B | Date played*/
               ['Håkon', 2, 1, 'Krakels', new Date(2011,10,3)],
               ['Sorebo', 2, 1, 'Christian', new Date(2011,10,3)],
               ['Nelich', 1, 2, 'Steinar', new Date(2011,10,3)],
+              ['Steinar', 2, 1, 'Selmer', new Date(2011,10,10)],
+              ['Jostein', 0, 2, 'Andriod', new Date(2011,10,10)],
+              ['Sorebo', 2, 1, 'TheForgottenOne', new Date(2011,10,10)],
+              ['Emil', 0, 2, 'Christian', new Date(2011,10,10)],
+              ['Krakels', 0, 2, 'Selmer', new Date(2011,10,10)],
+              ['Christian', 2, 0, 'Selmer', new Date(2011,10,10)],
+              ['TheForgottenOne', 0, 2, 'Christian', new Date(2011,10,10)],
+              ['Emil', 0, 2, 'TheForgottenOne', new Date(2011,10,10)],
+              ['Krakels', 0, 2, 'TheForgottenOne', new Date(2011,10,10)],
+              ['Sorebo', 2, 1, 'Andriod', new Date(2011,10,10)],
+              ['Steinar', 2, 0, 'Emil', new Date(2011,10,10)],
+              ['Krakels', 0, 2, 'Steinar', new Date(2011,10,10)],
+              ['Jostein', 0, 2, 'Andriod', new Date(2011,10,10)],
+              ['Jostein', 0, 2, 'Sorebo', new Date(2011,10,10)],
+              ['Jostein', 0, 2, 'TheForgottenOne', new Date(2011,10,10)],
              ];
 
 var unplayed_matches = [/* Round Number | Player A | Player B*/
@@ -53,12 +68,17 @@ var unplayed_matches = [/* Round Number | Player A | Player B*/
                         [4, "Selmer", "TheForgottenOne"],
                         [4, "Selmer", "Mikael"],
                         [4, "TheForgottenOne", "Mikael"],
-                        [5, "TheForgottenOne", "Jostein"],
                         [5, "Mikael", "Emil"],
                         [5, "Dagz", "Mikael"],
                         [5, "Emil", "Mikael"],
                         [5, "TheForgottenOne", "Dagz"],
-                       ]
+                        [6, "Mikael", "Nelich"],
+                        [6, "Håkon", "Dagz"],
+                        [6, "Håkon", "Dagz"],
+                        [6, "Nelich", "Dagz"],
+                        [6, "Håkon", "Mikael"],
+                        [6, "Nelich", "Mikael"],
+                       ];
 
 var players = [
                [0, "Andriod",0,0,0,0,0,0,0,0],
