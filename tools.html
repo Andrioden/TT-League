@@ -18,8 +18,10 @@
 		<div id="content">
 			<h1>Round generator</h1>
 			<p>Select players and hit the button. The algorithm attempts to setup two matches for every player.</p>
+			<input type="checkbox" onclick="toggleAll(this)"> All
 			<ul id="player_list" class="nobullet"></ul>
-			<button onclick="genMatches(2)">Generate!</button>
+			<input id="match_numbers" type="text" size="2"> matches 
+			<button onclick="clickGenMatches()">Generate!</button>
 			<p><label id="draw_status"> </label><label id="draw_count"></label></p>
 			<ol id="match_gen"></ol>
 		</div>

@@ -1,3 +1,5 @@
+var DELAY_TIME = 300;
+
 $(document).ready(function() {
 	// Generate select boxes for round generator
 	var ul = $("#player_list");
@@ -9,7 +11,9 @@ $(document).ready(function() {
 
 var FINAL_DRAWS;
 var TIMEOUTS = [];
-function genMatches(drawAmount) {
+function clickGenMatches() {
+	var drawAmount = $("#match_numbers").val();
+	console.log(drawAmount);
 	// Stop old timeout functions.
 	for(var i=0; i<TIMEOUTS.length; i++) clearTimeout(TIMEOUTS[i]);
 	// Start generating
@@ -41,7 +45,7 @@ function genMatches(drawAmount) {
 	ul.children().remove();
 	for (var i=0; i<draws.length; i++) {
 		var d = draws[i];
-		TIMEOUTS.push(setTimeout("appendMatchItem(FINAL_DRAWS, "+i+")",2000*i));
+		TIMEOUTS.push(setTimeout("appendMatchItem(FINAL_DRAWS, "+i+")",DELAY_TIME*i));
 	}
 }
 
@@ -67,7 +71,7 @@ function drawMatch(players, draws, drawAmount) {
 	// Find opponent A
 	var listA = filterNoDrawn(players); // Priority those without matches this round.
 	if (listA.length==0) { // Expanding search
-		listA = filterLeastTot(players)
+		listA = filterLeastTot(players);
 	}
 	listA = filterMaxDrawAmount(listA, drawAmount);
 	console.log(listA);
@@ -101,7 +105,7 @@ function drawMatch(players, draws, drawAmount) {
 	}
 	console.log(listB);
 	var B = drawRandom(listB);
-	console.log(A.name+" v "+B.name);
+	console.log("*MATCH*"+A.name+" v "+B.name);
 	B.drawn++;
 	draws.push([A.name, B.name]);
 }
@@ -141,7 +145,7 @@ function filterMaxTwo(players, draws, playerA) {
 		var A = playerA.name;
 		var B = players[y].name;
 		var played = versusCount(A, B, draws);
-		//console.log(A+" played vs "+B+":"+played);
+		console.log(A+" played vs "+B+":"+played);
 		if (played<2) {
 			list.push(players[y]);
 		}
@@ -171,7 +175,7 @@ function filterByVersusCount(players, draws, playerA) {
 }
 
 function filterNotSelf(players, self) {
-	var list = []
+	var list = [];
 	for (var i=0; i<players.length; i++) {
 		if (players[i] != self) {
 			list.push(players[i]); 
@@ -256,12 +260,20 @@ function versusCount(A, B, draws) {
 	}
 	// Draws (matches this round)
 	for (var i=0; i<draws.length; i++) {
-		if ((draws[i][0].name == A)&&(draws[i][1].name == B)) {
+		if ((draws[i][0] == A)&&(draws[i][1] == B)) {
 			played++;
 		}
-		else if ((draws[i][0].name == B)&&(draws[i][1].name == A)) {
+		else if ((draws[i][0] == B)&&(draws[i][1] == A)) {
 			played++;
 		}
 	}
 	return played;
+}
+
+
+function toggleAll(element) {
+	var checked = $(element).attr('checked');
+	if (!checked) checked = false;
+	console.log(checked);
+	$("#player_list").find('input[type=checkbox]').attr('checked', checked);
 }
