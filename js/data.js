@@ -54,6 +54,7 @@ var matches =[/* Player A | A sets | B sets | Player B | Date played*/
               ['Jostein', 0, 2, 'Andriod', new Date(2011,10,10)],
               ['Jostein', 0, 2, 'Sorebo', new Date(2011,10,10)],
               ['Jostein', 0, 2, 'TheForgottenOne', new Date(2011,10,10)],
+              ['Dagz', 0, 2, 'TheForgottenOne', new Date(2011,10,18)],
              ];
 
 var unplayed_matches = [/* Round Number | Player A | Player B*/
@@ -71,13 +72,31 @@ var unplayed_matches = [/* Round Number | Player A | Player B*/
                         [5, "Mikael", "Emil"],
                         [5, "Dagz", "Mikael"],
                         [5, "Emil", "Mikael"],
-                        [5, "TheForgottenOne", "Dagz"],
                         [6, "Mikael", "Nelich"],
                         [6, "Håkon", "Dagz"],
                         [6, "Håkon", "Dagz"],
                         [6, "Nelich", "Dagz"],
                         [6, "Håkon", "Mikael"],
                         [6, "Nelich", "Mikael"],
+                        [7, "Selmer", "Jostein"],
+                        [7, "Dagz", "Emil"],
+                        [7, "Steinar", "Håkon"],
+                        [7, "Mikael", "Sorebo"],
+                        [7, "Krakels", "Nelich"],
+                        [7, "TheForgottenOne", "Andriod"],
+                        [7, "Christian", "Mikael"],
+                        [7, "Krakels", "Andriod"],
+                        [7, "Jostein", "Mikael"],
+                        [7, "Håkon", "Sorebo"],
+                        [7, "Emil", "Nelich"],
+                        [7, "Andriod", "Dagz"],
+                        [7, "Christian", "Nelich"],
+                        [7, "Steinar", "TheForgottenOne"],
+                        [7, "Emil", "Håkon"],
+                        [7, "Selmer", "Jostein"],
+                        [7, "Krakels", "TheForgottenOne"],
+                        [7, "Selmer", "Dagz"],
+                        [7, "Christian", "Steinar"],
                        ];
 
 var players = [
