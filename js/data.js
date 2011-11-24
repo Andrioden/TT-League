@@ -55,6 +55,19 @@ var matches =[/* Player A | A sets | B sets | Player B | Date played*/
               ['Jostein', 0, 2, 'Sorebo', new Date(2011,10,10)],
               ['Jostein', 0, 2, 'TheForgottenOne', new Date(2011,10,10)],
               ['Dagz', 0, 2, 'TheForgottenOne', new Date(2011,10,18)],
+              ['Emil', 2, 0, 'Jostein', new Date(2011,10,24)],
+              ['Dagz', 2, 1, 'Andriod', new Date(2011,10,24)],
+              ['Christian', 2, 1, 'TheForgottenOne', new Date(2011,10,24)],
+              ['Steinar', 0, 2, 'Emil', new Date(2011,10,24)],
+              ['Andriod', 2, 0, 'TheForgottenOne', new Date(2011,10,24)],
+              ['Steinar', 2, 0, 'TheForgottenOne', new Date(2011,10,24)],
+              ['Steinar', 0, 2, 'TheForgottenOne', new Date(2011,10,24)],
+              ['Sorebo', 2, 0, 'Jostein', new Date(2011,10,24)],
+              ['Andriod', 2, 0, 'Emil', new Date(2011,10,24)],
+              ['Sorebo', 2, 0, 'Dagz', new Date(2011,10,24)],
+              ['Jostein', 0, 2, 'Dagz', new Date(2011,10,24)],
+              ['Christian', 2, 1, 'Sorebo', new Date(2011,10,24)],
+              ['Christian', 2, 0, 'Steinar', new Date(2011,10,24)],
              ];
 
 var unplayed_matches = [/* Round Number | Player A | Player B*/
@@ -89,14 +102,11 @@ var unplayed_matches = [/* Round Number | Player A | Player B*/
                         [7, "Jostein", "Mikael"],
                         [7, "Håkon", "Sorebo"],
                         [7, "Emil", "Nelich"],
-                        [7, "Andriod", "Dagz"],
                         [7, "Christian", "Nelich"],
-                        [7, "Steinar", "TheForgottenOne"],
                         [7, "Emil", "Håkon"],
                         [7, "Selmer", "Jostein"],
                         [7, "Krakels", "TheForgottenOne"],
                         [7, "Selmer", "Dagz"],
-                        [7, "Christian", "Steinar"],
                        ];
 
 var players = [
