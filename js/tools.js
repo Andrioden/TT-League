@@ -9,7 +9,7 @@ $(document).ready(function() {
 	}
 });
 
-var FINAL_DRAWS;
+var FINAL_DRAWS = [];
 var TIMEOUTS = [];
 function clickGenMatches() {
 	var drawAmount = $("#match_numbers").val();
@@ -20,7 +20,7 @@ function clickGenMatches() {
 	var attempts = 0;
 	var players = ["fakedifferntsize"];
 	var draws = [];
-	while ((attempts<10)&&(players.length!=draws.length)) { // Attempts to make a perfect setup
+	while ((attempts<100)&&(draws.length!=Math.floor(players.length*drawAmount/2))) { // Attempts to make a perfect setup
 		attempts++;
 		console.log("------------ ATTEMPT "+attempts+" ------------");
 		// Generate players list
@@ -36,9 +36,9 @@ function clickGenMatches() {
 		}
 		console.log("Drawn "+draws.length+" matches:");
 		console.log(draws);
+		if (draws.length>FINAL_DRAWS.length) FINAL_DRAWS = draws;
 	}
 	// Present the results
-	FINAL_DRAWS = draws;
 	var ul = $('#match_gen');
 	$('#draw_status').html("Drawing... ");
 	$('#draw_count').html("0/"+draws.length);
@@ -145,7 +145,7 @@ function filterMaxTwo(players, draws, playerA) {
 		var A = playerA.name;
 		var B = players[y].name;
 		var played = versusCount(A, B, draws);
-		console.log(A+" played vs "+B+":"+played);
+		//console.log(A+" played vs "+B+":"+played);
 		if (played<2) {
 			list.push(players[y]);
 		}
@@ -274,6 +274,5 @@ function versusCount(A, B, draws) {
 function toggleAll(element) {
 	var checked = $(element).attr('checked');
 	if (!checked) checked = false;
-	console.log(checked);
 	$("#player_list").find('input[type=checkbox]').attr('checked', checked);
 }
